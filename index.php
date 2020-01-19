@@ -6,8 +6,12 @@
             <main>
                 <div class="container">
                     <div class="row">
-                        <div class="col-4">col-4</div>
-                        <div class="col-8">col-8</div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Search..">
+                        </div>
+                        <div class="col-8">
+                            <div id='calendar'></div>
+                        </div>
                     </div>
                 </div>
             </main>

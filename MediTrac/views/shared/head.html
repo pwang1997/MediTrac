@@ -11,4 +11,27 @@
     <!--Site wide CSS-->
     <link rel="stylesheet" href="./MediTrac/static/styles/site.css">
 
+    <!--Full Calendar-->
+    <meta charset='utf-8' />
+
+    <link href='./MediTrac/static/libraries/fullcalendar/packages/core/main.css' rel='stylesheet' />
+    <link href='./MediTrac/static/libraries/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+
+    <script src=./MediTrac/static/libraries/fullcalendar/packages/core/main.js'></script>
+    <script src='fu./MediTrac/static/libraries/fullcalendar/packages/daygrid/main.js'></script>
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: [ 'dayGrid' ]
+        });
+
+        calendar.render();
+      });
+
+    </script>
+
 </head>
