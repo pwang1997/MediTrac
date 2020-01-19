@@ -1,7 +1,7 @@
 main{
     padding: 2em;
 }
-span.fc-content{
+div.fc-content{
     background-color: #08d6b0;
     color: white;
 }
