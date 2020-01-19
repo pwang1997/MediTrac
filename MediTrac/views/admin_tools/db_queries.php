@@ -1,15 +1,15 @@
 <?php
 
-
-$con = mysqli_connect("34.94.246.220", "root", "qwerty1", "meditrac");
-if (!$con) {
-
-    echo "Sorry, this website is experiencing problems.";
-    echo "Error: Failed to make a MySQL connection, here is why: \n";
-    echo "Errno: " . $mysqli->connect_errno . "\n";
-    echo "Error: " . $mysqli->connect_error . "\n";
-    die();
-}
+try {
+    $conn = new PDO("mysql:host=34.94.246.220;dbname=meditrac", "root", "qwerty1");
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
 /*$sql = "SELECT userName FROM user";
 if (!$result = $mysqli->query($sql)) {
     // Oh no! The query failed. 
