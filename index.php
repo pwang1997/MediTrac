@@ -42,7 +42,7 @@ if(!isset($_SESSION['user'])){
                         dataType:"json",
                         data: {
                             title: info.event.title,
-                            start: info.event.start,
+                            start: formatDate("YYYY-MM-DD", info.event.start),
                             end: info.event.end,
                         },
                         success:function(response) {
