@@ -31,7 +31,7 @@
             var calendarEl = document.getElementById('calendar');
 
             new Draggable(draggableEl, {
-                itemSelector: '.event',
+                itemSelector: '.fc-event',
                 eventData: function(eventEl) {
                     return {
                         title: eventEl.innerText.trim()
