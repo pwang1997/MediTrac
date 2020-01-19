@@ -51,18 +51,32 @@
                 selectable: true,
                 selectMirror: true,
                 select: function(arg) {
-                    // var title = prompt('Event Title:');
                     var modal = $('.modal');
                     modal.modal('show');
-                    var sympotom = "";
+                    var sympotom = "123";
 
                     var selectedSympotom = $(this).children("option:selected").val()
-                    if (selectedSympotom === "Others") {
-                        sympotom = $('#newSympotom');
+                    if (selectedSympotom === "Add New Sympotom" && $('#newSympotom')) {
+                        sympotom = $('#newSympotom').val();
                     } else {
                         sympotom = selectedSympotom;
                     }
-                    // modal.toggle();
+
+                    //ISSUE: not updating event calendar
+                    $("#btnSave").click((e) => {
+                        console.log($("#newSympotom").val())
+                        if (sympotom) {
+                            calendar.addEvent({
+                                title: sympotom,
+                                start: arg.start,
+                                end: arg.end,
+                                allDay: arg.allDay
+                            });
+                        }
+                        modal.modal('toggle');
+                    });
+
+                    // var title = prompt('Event Title:');
                     // if (title) {
                     //     calendar.addEvent({
                     //         title: title,

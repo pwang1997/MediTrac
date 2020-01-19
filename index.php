@@ -47,7 +47,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn btn-primary" id="btnSave">Save</button>
                             </div>
                         </div>
                     </div>
@@ -70,5 +70,7 @@
             '<div class="col-sm-10"><input type="text" class="form-control" id="newSympotom" name="newSympotom"></div></div>');
             }
         });
+
+
     });
 </script>
