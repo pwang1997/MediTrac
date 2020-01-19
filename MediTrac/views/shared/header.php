@@ -17,7 +17,7 @@
             <?php
                 if(isset($_SESSION) && isset($_SESSION['user'])){
                     include_once '../admin_tools/db_queries';
-                    echo "<p>Welcome ".executeSql("SELECT userName FROM user WHERE id = ".$_SESSION['user'])->fetch()['username']."!</p>";
+                    echo "<p>Welcome ".executeSql(connect(),"SELECT userName FROM user WHERE id = ".$_SESSION['user'])->fetch()['username']."!</p>";
                 }
             ?>
             <form class="form-inline my-2 my-lg-0">
