@@ -35,7 +35,7 @@ if(!isset($_SESSION['user'])){
                 //selectable: true,
                 selectMirror: true,
                 droppable: true,
-                eventRecieve: function(info){
+                eventReceive: function(info){
                     alert("test");
                 },
                 editable: true,
