@@ -8,9 +8,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-4 container p-2 border bg-dark text-light">
-                    <input type="text" placeholder="Add new.." class="w-100 p-1 m-1">
+                    <input type="text" placeholder="Add new" class="w-100 p-1 m-1">
                     <div id='external-events'>
-                        <h4 class="text-center">Draggable Events</h4>
+                        <h4 class="text-center" style="color: #08d6b0">Draggable Events</h4>
                         <div id='draggable-el' class='t-2 m-2'>
                             <div class="fc-event fc-draggable p-1 m-1">My Event 1</div>
                             <div class='fc-event fc-draggable p-1 m-1'>My Event 2</div>
