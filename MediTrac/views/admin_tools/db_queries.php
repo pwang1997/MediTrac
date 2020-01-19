@@ -19,7 +19,7 @@ $result->fetch_assoc();
 
 echo($result['email']);
 }catch(Exception $e){
-    echo $e
+    echo $e;
 }
 
 
