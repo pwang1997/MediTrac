@@ -36,11 +36,11 @@
                             <div class="modal-body">
                                 <form>
                                     <div class="form-group">
-                                        <label for="role">symptom</label>
+                                        <label for="role">Symptom</label>
                                         <select class="form-control" id="symptomList" name="symptomList">
-                                            <option>Headache</option>
+                                            <option id="firstOption">Headache</option>
                                             <option>Fever</option>
-                                            <option id="addNewsymptom">Add New symptom</option>
+                                            <option id="addNewsymptom">Add New Symptom</option>
                                         </select>
                                     </div>
                                 </form>
@@ -65,8 +65,8 @@
     $(document).ready(() => {
         $("#symptomList").change(function() {
             var selectedsymptom = $(this).children("option:selected").val();
-            if (selectedsymptom === "Add New symptom") {
-                $(this).parent().append('<div class="form-group row"><label for="newsymptom" class="col-sm-2 col-form-label form-control-label">symptom</label>' +
+            if (selectedsymptom === "Add New Symptom") {
+                $(this).parent().append('<div class="form-group row" id="newSymptomDiv"><label for="newsymptom" class="col-sm-2 col-form-label form-control-label">symptom</label>' +
             '<div class="col-sm-10"><input type="text" class="form-control" id="newsymptom" name="newsymptom"></div></div>');
             }
         });

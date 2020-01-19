@@ -58,8 +58,8 @@
                     //ISSUE: not updating event calendar
                     $("#btnSave").click((e) => {
                         symptom = $("#symptomList").select().val()
-                        if (symptom === "Add New Symptom" && $('#newSymptom')) {
-                            symptom = $('#newSymptom').val();
+                        if (symptom === "Add New Symptom" && $('#newsymptom').val()) {
+                            symptom = $('#newsymptom').val();
                         }
                         console.log(symptom)
                         if (symptom) {
@@ -71,10 +71,9 @@
                             });
                         }
                         calendar.unselect();
-                        modal.modal('toggle');
-                        // $("#symptomList:first-child").attr('selected', true);
-                        // $("#newSymptom").html("");
-
+                        modal.modal('hide');
+                        $('#newSymptomDiv').remove();
+                        $("#firstOption").attr('selected', '');
                     });
 
                     // var title = prompt('Event Title:');
