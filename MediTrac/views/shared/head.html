@@ -51,15 +51,26 @@
                 selectable: true,
                 selectMirror: true,
                 select: function(arg) {
-                    var title = prompt('Event Title:');
-                    if (title) {
-                        calendar.addEvent({
-                            title: title,
-                            start: arg.start,
-                            end: arg.end,
-                            allDay: arg.allDay
-                        })
+                    // var title = prompt('Event Title:');
+                    var modal = $('.modal');
+                    modal.modal('show');
+                    var sympotom = "";
+
+                    var selectedSympotom = $(this).children("option:selected").val()
+                    if (selectedSympotom === "Others") {
+                        sympotom = $('#newSympotom');
+                    } else {
+                        sympotom = selectedSympotom;
                     }
+                    // modal.toggle();
+                    // if (title) {
+                    //     calendar.addEvent({
+                    //         title: title,
+                    //         start: arg.start,
+                    //         end: arg.end,
+                    //         allDay: arg.allDay
+                    //     })
+                    // }
                     calendar.unselect()
                 },
                 editable: true,
