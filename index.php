@@ -37,43 +37,6 @@ if(!isset($_SESSION['user'])){
                 drop: function(date, this){
                     alert(date.format());
                 }
-                // select: function(arg) {
-                //     var modal = $('.modal');
-                //     modal.modal('show');
-                //     symptom = "";
-                //     isAdded = false;
-
-                //     //ISSUE: not updating event calendar
-                //     $("#btnSave").click((e) => {
-                //         symptom = $("#symptomList").select().val()
-                //         if (symptom === "Add New Symptom" && $('#newsymptom').val()) {
-                //             symptom = $('#newsymptom').val();
-                //         }
-                //         console.log(symptom)
-                //         if (symptom) {
-                //             calendar.addEvent({
-                //                 title: symptom,
-                //                 start: arg.start,
-                //                 end: arg.end,
-                //                 allDay: arg.allDay
-                //             });
-                //         }
-                //         calendar.unselect();
-                //         modal.modal('hide');
-                //         $('#newSymptomDiv').remove();
-                //         $("#firstOption").attr('selected', '');
-                //     });
-
-                // var title = prompt('Event Title:');
-                // if (title) {
-                //     calendar.addEvent({
-                //         title: title,
-                //         start: arg.start,
-                //         end: arg.end,
-                //         allDay: arg.allDay
-                //     })
-                // }
-                // },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
                 events: [
@@ -115,8 +78,15 @@ if(!isset($_SESSION['user'])){
                     <div id='external-events'>
                         <h4 class="text-center" style="color: #08d6b0">Draggable Events</h4>
                         <div id='draggable-el' class='t-2 m-2'>
-                            <div class="fc-event fc-draggable p-1 m-1" style="background-color: #08d6b0; border: solid 1px #08d6b0">My Event 1</div>
-                            <div class='fc-event fc-draggable p-1 m-1' style="background-color: #08d6b0; border: solid 1px #08d6b0">My Event 2</div>
+                        <?php
+                            $user = $_SESSION['user'];
+                            $con = connect();
+                            $symptoms = getSymptomsFromUser($con,$user);
+                            foreach($symptoms as $symptom){
+                                echo "<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: ".$symptom['colour']."; border: solid 1px #08d6b0\">".$symptom['name']."</div>";
+                            }
+                            $con = null;
+                        ?>
                         </div>
 
                     </div>
