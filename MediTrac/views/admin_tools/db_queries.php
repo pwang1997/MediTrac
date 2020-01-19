@@ -12,14 +12,17 @@ catch(PDOException $e)
     die();
     }
 
-    echo getUserFromLogin($con,'jane@doe.ca','passy')['id'];
-    foreach(executeSql($con,"SELECT * FROM user")->fetchAll() as $row){
-        echo "<p>" .$row['id'] . $row['userName'] . $row['email'] . $row['password']."</p>"
+    echo "<p>".getUserFromLogin($con,'jane@doe.ca','passy')['id']."</p>";
+    foreach(getSymptomsFromUser($con,2) as $row){
+        echo "<p>" .$row['name'] . "</p>";
     }
     function getUserFromLogin($con, $email, $password){
-        $sql = "SELECT * FROM user WHERE \"email\" = '$email' AND \"password\" = '$password'";
-        echo $sql;
+        $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
         return executeSql($con,$sql)->fetch();
+    }
+    function getSymptomsFromUser($con,$userId){
+        $sql = "SELECT * FROM symptom WHERE userId = $userId";
+        return executeSql($con,$sql)->fetchAll();
     }
 
     function executeSql($con, $sql){

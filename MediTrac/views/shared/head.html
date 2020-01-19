@@ -31,7 +31,7 @@
             var calendarEl = document.getElementById('calendar');
 
             new Draggable(draggableEl, {
-                itemSelector: '.event',
+                itemSelector: '.fc-event',
                 eventData: function(eventEl) {
                     return {
                         title: eventEl.innerText.trim()
@@ -47,7 +47,7 @@
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
                 navLinks: true, // can click day/week names to navigate views
-                selectable: true,
+                //selectable: true,
                 selectMirror: true,
                 select: function(arg) {
                     var modal = $('.modal');
