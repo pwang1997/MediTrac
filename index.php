@@ -5,7 +5,7 @@
 <body>
     <?php include './MediTrac/views/shared/header.html'; ?>
     <main>
-        <div class="container">
+        <div class="container bg-dark text-light">
             <div class="row">
                 <div class="col-4 container p-2 border">
                     <input type="text" placeholder="Add new.." class="w-100 p-1 m-1">
