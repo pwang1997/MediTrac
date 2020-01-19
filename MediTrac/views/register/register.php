@@ -37,8 +37,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="reset" class="btn btn-primary col-md-4">Reset</button>
-                    <button type="submit" class="btn btn-primary col-md-4 offset-md-4" id="submit">Submit</button>
+                    <button type="reset" class="btn btn-black col-md-4">Reset</button>
+                    <button type="submit" class="btn btn-black col-md-4 offset-md-4" id="submit">Submit</button>
                 </div>
         </div>
         </form>
