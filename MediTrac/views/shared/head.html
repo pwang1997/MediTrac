@@ -16,20 +16,25 @@
 
     <link href='./MediTrac/static/libraries/fullcalendar/packages/core/main.css' rel='stylesheet' />
     <link href='./MediTrac/static/libraries/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+    <link href='./MediTrac/static/libraries/fullcalendar/packages/interaction/main.css' rel='stylesheet' />
 
     <script src='./MediTrac/static/libraries/fullcalendar/packages/core/main.js'></script>
     <script src='./MediTrac/static/libraries/fullcalendar/packages/daygrid/main.js'></script>
+    <script src='./MediTrac/static/libraries/fullcalendar/packages/interaction/main.js'></script>
 
     <script>
 
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
+        document.addEventListener('DOMContentLoaded', function() {
+            var draggableEl = document.getElementById('mydraggable');
+            var calendarEl = document.getElementById('calendar');
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: [ 'dayGrid', 'interaction', 'bootstrap' ]
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'dayGrid', 'interactionPlugin', 'bootstrap' ],
+            droppable: true
         });
 
         calendar.render();
+        new Draggable(draggableEl);
       });
 
     </script>
