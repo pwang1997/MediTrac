@@ -14,6 +14,12 @@
                     <a class="nav-link" href="/MediTrac/views/register/register.php">Register</a>
                 </li>
             </ul>
+            <?php
+                if(isset($_SESSION) && isset($_SESSION['user'])){
+                    include_once '../admin_tools/db_queries';
+                    echo "<p>Welcome ".executeSql("SELECT userName FROM user WHERE id = ".$_SESSION['user'])->fetch()['username']."!</p>";
+                }
+            ?>
             <form class="form-inline my-2 my-lg-0">
             </form>
         </div>
