@@ -91,7 +91,10 @@ if(!isset($_SESSION['user'])){
         <div class="container">
             <div class="row">
                 <div class="col-4 container p-2 border bg-dark text-light">
-                    <input type="text" placeholder="Add new" class="w-100 p-2 mr-2 mt-2 mb-2"/>
+                    <form action="" metho="POST" id="addSymptom">
+                        <input type="text" placeholder="Add new" class="w-100 p-2 mr-2 mt-2 mb-2"/>
+                        <button type="submit" form="addSymptom" value="Submit">add</button>
+                    </form>
                     <div id='external-events'>
                         <h4 class="text-center" style="color: #08d6b0">Symptoms</h4>
                         <div id='draggable-el' class='t-2 m-2'>
