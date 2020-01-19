@@ -1,4 +1,5 @@
 <?php
+echo "<script>console.log(".$_SESSION['user'].")</script>";
 if(!isset($_SESSION['user'])){
                     header("Location:"."./MediTrac/views/login/login.php");
                 }
