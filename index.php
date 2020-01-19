@@ -156,7 +156,7 @@ if (!isset($_SESSION['user'])) {
         $(":submit").click((e) => {
             e.preventDefault();
             var symptom = $("#inputSymptom");
-            if (!symptom.isEmpty())
+            if (!symptom.isEmpty()){
                 $.ajax({
                     url: "MediTrac/views/admin_tools/addSymptom.php",
                     type: "POST",
@@ -171,11 +171,12 @@ if (!isset($_SESSION['user'])) {
 
                     }
                 });
+                $("#draggable-el").append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">'+symptom.val()+'</div>');
             }
             else{
                 alert("Add New Symptom Field must not be empty.");
             }
-            $("#draggable-el").append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">'+symptom.val()+'</div>');
+            
 
         })
 
