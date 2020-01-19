@@ -34,9 +34,9 @@ if(!isset($_SESSION['user'])){
                 navLinks: true, // can click day/week names to navigate views
                 //selectable: true,
                 selectMirror: true,
-                // drop: function(date){
-                //     alert(date.format());
-                // },
+                drop: function(date, jsEvent, ui, resourceId){
+                    alert(date.format());
+                },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
                 events: [
