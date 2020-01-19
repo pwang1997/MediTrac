@@ -44,37 +44,37 @@
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    //right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
                 navLinks: true, // can click day/week names to navigate views
                 //selectable: true,
                 selectMirror: true,
-                select: function(arg) {
-                    var modal = $('.modal');
-                    modal.modal('show');
-                    symptom = "";
-                    isAdded = false;
+                // select: function(arg) {
+                //     var modal = $('.modal');
+                //     modal.modal('show');
+                //     symptom = "";
+                //     isAdded = false;
 
-                    //ISSUE: not updating event calendar
-                    $("#btnSave").click((e) => {
-                        symptom = $("#symptomList").select().val()
-                        if (symptom === "Add New Symptom" && $('#newsymptom').val()) {
-                            symptom = $('#newsymptom').val();
-                        }
-                        console.log(symptom)
-                        if (symptom) {
-                            calendar.addEvent({
-                                title: symptom,
-                                start: arg.start,
-                                end: arg.end,
-                                allDay: arg.allDay
-                            });
-                        }
-                        calendar.unselect();
-                        modal.modal('hide');
-                        $('#newSymptomDiv').remove();
-                        $("#firstOption").attr('selected', '');
-                    });
+                //     //ISSUE: not updating event calendar
+                //     $("#btnSave").click((e) => {
+                //         symptom = $("#symptomList").select().val()
+                //         if (symptom === "Add New Symptom" && $('#newsymptom').val()) {
+                //             symptom = $('#newsymptom').val();
+                //         }
+                //         console.log(symptom)
+                //         if (symptom) {
+                //             calendar.addEvent({
+                //                 title: symptom,
+                //                 start: arg.start,
+                //                 end: arg.end,
+                //                 allDay: arg.allDay
+                //             });
+                //         }
+                //         calendar.unselect();
+                //         modal.modal('hide');
+                //         $('#newSymptomDiv').remove();
+                //         $("#firstOption").attr('selected', '');
+                //     });
 
                     // var title = prompt('Event Title:');
                     // if (title) {
