@@ -1,7 +1,15 @@
 <?php
 
-mysqli_report(MYSQLI_REPORT_ALL);
+
 $mysqli = new mysqli("34.94.246.220", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
+if ($mysqli->connect_errno) {
+
+    echo "Sorry, this website is experiencing problems.";
+    echo "Error: Failed to make a MySQL connection, here is why: \n";
+    echo "Errno: " . $mysqli->connect_errno . "\n";
+    echo "Error: " . $mysqli->connect_error . "\n";
+    die();
+}
 /*$sql = "SELECT userName FROM user";
 if (!$result = $mysqli->query($sql)) {
     // Oh no! The query failed. 
