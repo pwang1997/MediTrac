@@ -104,10 +104,10 @@
                 foreach($symptoms as $symptom){
                     $events = getSymptomEventsForMonth($con,$symptom['id'],$month,$year);
                     foreach($events as $event){
-                        $output .= "{title: ".$symptom['name'].",
-                            start: ".$event['date'].",
-                            color: ".$symptom['colour'].
-                            "},";
+                        $output .= "{title: \'".$symptom['name']."\',
+                            start: \'".$event['date']."\',
+                            color: \'".$symptom['colour'].
+                            "\'},";
                     }
                 }
                 $con = null;
