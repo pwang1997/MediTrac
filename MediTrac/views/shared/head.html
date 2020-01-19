@@ -52,18 +52,16 @@
                 select: function(arg) {
                     var modal = $('.modal');
                     modal.modal('show');
-                    var symptom = "123";
-
-                    var selectedSymptom = $(this).children("option:selected").val()
-                    if (selectedSymptom === "Add New Symptom" && $('#newSymptom')) {
-                        symptom = $('#newSymptom').val();
-                    } else {
-                        symptom = selectedSymptom;
-                    }
+                    symptom = "";
+                    isAdded = false;
 
                     //ISSUE: not updating event calendar
                     $("#btnSave").click((e) => {
-                        console.log($("#newSymptom").val())
+                        symptom = $("#symptomList").select().val()
+                        if (symptom === "Add New Symptom" && $('#newSymptom')) {
+                            symptom = $('#newSymptom').val();
+                        }
+                        console.log(symptom)
                         if (symptom) {
                             calendar.addEvent({
                                 title: symptom,
@@ -72,7 +70,11 @@
                                 allDay: arg.allDay
                             });
                         }
+                        calendar.unselect();
                         modal.modal('toggle');
+                        // $("#symptomList:first-child").attr('selected', true);
+                        // $("#newSymptom").html("");
+
                     });
 
                     // var title = prompt('Event Title:');
@@ -84,7 +86,6 @@
                     //         allDay: arg.allDay
                     //     })
                     // }
-                    calendar.unselect()
                 },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
