@@ -36,7 +36,7 @@
         $con->exec($sql);
     }
     function insertSymptom($con,$userId,$name,$colour){
-        $sql = "INSERT INTO symptom(userId,name,colour) VALUES(\'$userId\',\'$name\',\'"$colour"\'";
+        $sql = "INSERT INTO symptom(userId,name,colour) VALUES(\'$userId\',\'$name\',\'$colour\'";
         $con->exec($sql);
     }
     function insertSymptomEvent($con,$symptomId,$date){
