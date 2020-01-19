@@ -2,7 +2,7 @@ $(document).ready(() => {
     var email = $("#email");
     var password = $("#password");
     $.ajax({
-        url: "url",
+        url: "../../views/admin_tools/loginProcess.php",
         type: "POST",
         data: {
             "email": email.val(),
