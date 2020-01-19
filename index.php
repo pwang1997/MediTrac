@@ -47,7 +47,7 @@ if(!isset($_SESSION['user'])){
                         dataType:"json",
                         data: {
                             title: info.event.title,
-                            start: convertDate(info.event.start),
+                            start: convertDate(info.event.start + ''),
                             end: info.event.end,
                         },
                         success:function(response) {
