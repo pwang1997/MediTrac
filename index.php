@@ -36,18 +36,18 @@
                             <div class="modal-body">
                                 <form>
                                     <div class="form-group">
-                                        <label for="role">Sympotom</label>
-                                        <select class="form-control" id="sympotomList" name="sympotomList">
-                                            <option>Headache</option>
+                                        <label for="role">Symptom</label>
+                                        <select class="form-control" id="symptomList" name="symptomList">
+                                            <option id="firstOption">Headache</option>
                                             <option>Fever</option>
-                                            <option id="addNewSympotom">Add New Sympotom</option>
+                                            <option id="addNewsymptom">Add New Symptom</option>
                                         </select>
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn btn-primary" id="btnSave">Save</button>
                             </div>
                         </div>
                     </div>
@@ -63,12 +63,14 @@
 
 <script>
     $(document).ready(() => {
-        $("#sympotomList").change(function() {
-            var selectedSympotom = $(this).children("option:selected").val();
-            if (selectedSympotom === "Add New Sympotom") {
-                $(this).parent().append('<div class="form-group row"><label for="newSympotom" class="col-sm-2 col-form-label form-control-label">Sympotom</label>' +
-            '<div class="col-sm-10"><input type="text" class="form-control" id="newSympotom" name="newSympotom"></div></div>');
+        $("#symptomList").change(function() {
+            var selectedsymptom = $(this).children("option:selected").val();
+            if (selectedsymptom === "Add New Symptom") {
+                $(this).parent().append('<div class="form-group row" id="newSymptomDiv"><label for="newsymptom" class="col-sm-2 col-form-label form-control-label">symptom</label>' +
+            '<div class="col-sm-10"><input type="text" class="form-control" id="newsymptom" name="newsymptom"></div></div>');
             }
         });
+
+
     });
 </script>
