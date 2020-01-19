@@ -1,4 +1,5 @@
 $(document).ready(() => {
+<<<<<<< HEAD
     var email = $("#email");
     var password = $("#password");
     $.ajax({
@@ -15,6 +16,32 @@ $(document).ready(() => {
             alert("failed to register user");
         }
     });
+=======
+    $("button[type='submit']").click((e) => {
+        e.preventDefault();
+        var email = $("#email");
+        var password = $("#password");
+        $.ajax({
+            url: "url",
+            type: "POST",
+            data: {
+                "email": email.val(),
+                "password": MD5(password.val())
+            },
+            success: function(response) {
+                if (response.success) {
+                    console.log(response);
+                } else {
+                    alert("log in failed")
+                }
+            },
+            fail: function() {
+                alert("failed to register user");
+            }
+        });
+    })
+
+>>>>>>> c92ff9fbccbe07b30b7cea837f0f48f9565a1897
 
     function MD5(password) {
         var MD5 = function(d) { result = M(V(Y(X(d), 8 * d.length))); return result.toLowerCase() };
