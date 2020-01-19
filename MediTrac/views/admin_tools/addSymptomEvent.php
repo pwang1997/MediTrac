@@ -1,7 +1,7 @@
 <?php 
     require './db_queries.php';
     $title = $_POST['title'];
-    $start = $_POST['start'];
+    echo $start = date("YYYY-MM-DD", $_POST['start']);
     $end = $_POST['end'];
 
     if(!isset($_SESSION)) { session_start();}
@@ -16,3 +16,5 @@
             }
         }
     }
+
+    
