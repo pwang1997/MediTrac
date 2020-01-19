@@ -1,7 +1,7 @@
 <?php
 
 
-$mysqli = new mysqli("34.94.246.220", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
+$mysqli = new mysqli("127.0.0.1", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
 if ($mysqli->connect_errno) {
 
     echo "Sorry, this website is experiencing problems.";
