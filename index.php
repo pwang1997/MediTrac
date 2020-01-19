@@ -105,7 +105,7 @@ if (!isset($_SESSION['user'])) {
 </script>
 
 <body>
-    <?php include './MediTrac/views/shared/header.html'; ?>
+    <?php include './MediTrac/views/shared/header.php'; ?>
     <main>
         <div class="container">
             <div class="row">

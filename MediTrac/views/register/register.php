@@ -4,7 +4,7 @@
     <!--<script src="../../static/scripts/register.js"></script>-->
     
     <body>
-        <?php include '../shared/header.html'; ?>
+        <?php include '../shared/header.php'; ?>
     <main>
         <div class="mx-auto" style="width: 600px;">
             <form id="registerForm" method="POST"action="../admin_tools/registerProcess.php">
