@@ -36,7 +36,23 @@ if(!isset($_SESSION['user'])){
                 selectMirror: true,
                 droppable: true,
                 eventReceive: function(info){
-                    
+                    $.ajax({
+                        url:"url",
+                        type:"POST",
+                        dataType:"json",
+                        data: {
+                            title: info.event.title,
+                            start: info.event.start,
+                            end: info.event.end,
+                            url: "/loginProgress.php"
+                        },
+                        success:function(response) {
+                            console.log(response)
+                        },
+                        fail:function() {
+
+                        }
+                    });
                 },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
