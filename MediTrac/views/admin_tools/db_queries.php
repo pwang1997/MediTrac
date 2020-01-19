@@ -1,8 +1,8 @@
 <?php
 
 
-$mysqli = new mysqli("127.0.0.1", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
-if ($mysqli->connect_errno) {
+$con = mysqli_connect("34.94.246.220", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
+if (!$con) {
 
     echo "Sorry, this website is experiencing problems.";
     echo "Error: Failed to make a MySQL connection, here is why: \n";
