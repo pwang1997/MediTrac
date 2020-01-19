@@ -9,6 +9,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!--Site wide CSS-->
-    <link rel="stylesheet" src="./MediTrac/static/styles/site.css">
+    <link rel="stylesheet" href="./MediTrac/static/styles/site.css">
+
+    <!--Full Calendar-->
+    <meta charset='utf-8' />
+
+    <link href='./MediTrac/static/libraries/fullcalendar/packages/core/main.css' rel='stylesheet' />
+    <link href='./MediTrac/static/libraries/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+
+    <script src='./MediTrac/static/libraries/fullcalendar/packages/core/main.js'></script>
+    <script src='./MediTrac/static/libraries/fullcalendar/packages/daygrid/main.js'></script>
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: [ 'dayGrid', 'interaction', 'bootstrap' ]
+        });
+
+        calendar.render();
+      });
+
+    </script>
 
 </head>
