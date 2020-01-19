@@ -5,9 +5,9 @@
 <body>
     <?php include './MediTrac/views/shared/header.html'; ?>
     <main>
-        <div class="container bg-dark text-light">
+        <div class="container">
             <div class="row">
-                <div class="col-4 container p-2 border">
+                <div class="col-4 container p-2 border bg-dark text-light">
                     <input type="text" placeholder="Add new.." class="w-100 p-1 m-1">
                     <div id='external-events'>
                         <h4 class="text-center">Draggable Events</h4>
