@@ -17,7 +17,7 @@ catch(PDOException $e)
         echo "<p>" .$row['id'] . $row['userName'] . $row['email'] . $row['password']."</p>";
     }
     function getUserFromLogin($con, $email, $password){
-        $sql = "SELECT * FROM user WHERE \"email\" = '$email' AND \"password\" = '$password'";
+        $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
         echo $sql;
         return executeSql($con,$sql)->fetch();
     }
