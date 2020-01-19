@@ -91,10 +91,10 @@
                 events: [
                 <?php
                 include './MediTrac/views/admin_tools/db_queries.php';
-                if(!isset($_SESSION['userId'])){
+                if(!isset($_SESSION['user'])){
                     header("Location:"."./MediTrac/views/login/login.php");
                 }
-                $user = $_SESSION['userId'];
+                $user = $_SESSION['user'];
                 $con = connect();
                 $symptoms = getSymptomsFromUser($con,$user);
                 $year = date("Y");
