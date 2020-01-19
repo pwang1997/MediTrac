@@ -1,7 +1,7 @@
 <?php
 
 
-$con = mysqli_connect("34.94.246.220", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
+$con = mysqli_connect("34.94.246.220", "root", "qwerty1", "meditrac");
 if (!$con) {
 
     echo "Sorry, this website is experiencing problems.";
