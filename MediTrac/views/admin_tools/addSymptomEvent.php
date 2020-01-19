@@ -4,7 +4,7 @@
     $start = $_POST['start'];
     $end = $_POST['end'];
 
-    if(issset($_SESSION['user'])) {
+    if(isset($_SESSION['user'])) {
         $symptoms = getSymptomsFromUser($connection, $_SESSION['user']);
         foreach($symptoms as $symptom) {
             if($symptom['name'] === $title) {
@@ -13,4 +13,3 @@
             }
         }
     }
-    
