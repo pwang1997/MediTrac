@@ -34,6 +34,9 @@ if(!isset($_SESSION['user'])){
                 navLinks: true, // can click day/week names to navigate views
                 //selectable: true,
                 selectMirror: true,
+                drop: function(date, this){
+                    alert(date.format());
+                }
                 // select: function(arg) {
                 //     var modal = $('.modal');
                 //     modal.modal('show');
