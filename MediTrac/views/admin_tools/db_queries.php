@@ -9,7 +9,7 @@ try {
 catch(PDOException $e)
     {
     echo "Connection failed: " . $e->getMessage();
-    die()
+    die();
     }
 $sql = "SELECT userName FROM user";
 $stmt = $conn->prepare($sql);
