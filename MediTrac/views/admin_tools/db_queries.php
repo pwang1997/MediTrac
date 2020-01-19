@@ -1,24 +1,20 @@
 <?php
 
-try {
-    $con = new PDO("mysql:host=34.94.246.220;dbname=meditrac", "root", "qwerty1");
-    // set the PDO error mode to exception
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+    function connect(){
+    try {
+        $con = new PDO("mysql:host=34.94.246.220;dbname=meditrac", "root", "qwerty1");
+        // set the PDO error mode to exception
+        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
     }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    die();
+    catch(PDOException $e){
+        echo "Connection failed: " . $e->getMessage();
+        die();
+    }
+        return $con;
     }
 
-    echo "<p>".getUserFromLogin($con,'jane@doe.ca','passy')['id']."</p>";
-    foreach(getSymptomsFromUser($con,2) as $row){
-        echo "<p>" .$row['name'] . "</p>";
-    }
-    foreach(getSymptomEventsForMonth($con,1,1,2020) as $row){
-        echo "<p>" .$row['date'] . "</p>";
-    }
+    //SELECT
     function getUserFromLogin($con, $email, $password){
         $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
         return executeSql($con,$sql)->fetch();
@@ -32,6 +28,20 @@ catch(PDOException $e)
         $endYear = ($month == 12 ? $year+1 : $year);
         $sql = "SELECT * FROM symptomEvent WHERE symptomId = $symptomId AND date >= '$year-$month-1 00:00:00' AND date < '$endYear-$endMonth-1 00:00:00'";
         return executeSql($con,$sql)->fetchAll();
+    }
+
+    //INSERT
+    function insertUser($con,$userName,$email,$password){
+        $sql = "INSERT INTO user(userName,email,password) VALUES(\'$userName\',\'$email\',\'".md5($password)."\'";
+        $con->exec($sql);
+    }
+    function insertSymptom($con,$userId,$name,$colour){
+        $sql = "INSERT INTO symptom(userId,name,colour) VALUES(\'$userId\',\'$name\',\'"$colour"\'";
+        $con->exec($sql);
+    }
+    function insertSymptomEvent($con,$symptomId,$date){
+        $sql = "INSERT INTO symptomEvent(symptomId,date) VALUES(\'$symptomId\',\'$date\')";
+        $con->exec($sql);
     }
 
     function executeSql($con, $sql){
