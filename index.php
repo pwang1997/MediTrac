@@ -13,7 +13,7 @@
                         <h4>Draggable Events</h4>
                         <div id='draggable-el' class='t-2'>
                             <div class="fc-event fc-draggable p-1">My Event 1</div>
-                            <div class='c-event fc-draggable'>My Event 2</div>
+                            <div class='fc-event fc-draggable'>My Event 2</div>
                         </div>
 
                     </div>
