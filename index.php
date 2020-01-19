@@ -146,7 +146,7 @@ if (!isset($_SESSION['user'])) {
 <script>
     $(document).ready(() => {
         var colours = ["#08d6b0","#a909b8","#156b07","#db0d66","#0d05a1","#0c0c0d","#a11010"];
-        var colour = colours[Math.floor(Math.random()*colours.length)];
+        
         $("#symptomList").change(function() {
             var selectedsymptom = $(this).children("option:selected").val();
             if (selectedsymptom === "Add New Symptom") {
@@ -157,6 +157,7 @@ if (!isset($_SESSION['user'])) {
 
         $(":submit").click((e) => {
             e.preventDefault();
+            var colour = colours[Math.floor(Math.random()*colours.length)];
             var symptom = $("#inputSymptom");
             if (symptom.val() !== ""){
                 $.ajax({
@@ -174,7 +175,7 @@ if (!isset($_SESSION['user'])) {
 
                     }
                 });
-                $("#draggable-el").append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: "+colour+" "; border: solid 1px black\">'+symptom.val()+'</div>');
+                $("#draggable-el").append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: '+colour+' "; border: solid 1px black\">'+symptom.val()+'</div>');
             }
             else{
                 alert("Add New Symptom Field must not be empty.");
