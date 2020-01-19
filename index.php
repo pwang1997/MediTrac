@@ -7,13 +7,13 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 container m-2">
                     <input type="text" placeholder="Search..">
                     <div id='external-events'>
                         <h4>Draggable Events</h4>
-                        <div id='draggable-el'>
-                            <div class="event">My Event 1</div>
-                            <div class='event'>My Event 2</div>
+                        <div id='draggable-el mt-2'>
+                            <div class="fc-event fc-draggable">My Event 1</div>
+                            <div class='fc-event fc-draggable'>My Event 2</div>
                         </div>
 
                     </div>
