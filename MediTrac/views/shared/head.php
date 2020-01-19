@@ -88,15 +88,32 @@
                 // },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
-                events: [{
-                    title: 'event1',
-                    start: '2020-01-19',
-                    color: 'yellow'
-                }, {
-                    title: 'event1',
-                    start: '2020-01-19',
-                    color: 'red'
-                }]
+                events: [
+                <?php
+                include './MediTrac/views/admin_tools/db_queries.php';
+                $_SESSION['userId'] = 1;
+                if(!isset($_SESSION['userId'])){
+                    redirect("./MediTrac/views/login/login.php");
+                }
+                $user = $_SESSION['userId'];
+                $con = connect();
+                $symptoms = getSymptomsFromUser($con,$user);
+                $year = date("Y");
+                $month = date("m");
+                $output = "";
+                foreach($symptoms as $symptom){
+                    $events = getSymptomEventsForMonth($con,$symptom['id'],$month,$year);
+                    foreach($events as $event){
+                        $output .= "{title: ".$symptom['name'].",
+                            start: ".$event['date'].",
+                            color: ".$symptom['colour'].
+                            "},";
+                    }
+                }
+                $con = null;
+                echo substr($output,0,-1);
+                ?>
+                ]
             });
 
             calendar.render();
