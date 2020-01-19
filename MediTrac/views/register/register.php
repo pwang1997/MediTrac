@@ -7,7 +7,7 @@
         <?php include '../shared/header.html'; ?>
     <main>
         <div class="mx-auto" style="width: 600px;">
-            <form id="registerForm" >
+            <form id="registerForm" method="POST"action="../admin_tools/registerProcess.php">
                 <div class="row">
                     <h4 class="offset-md-6">Register</h4>
                 </div>
