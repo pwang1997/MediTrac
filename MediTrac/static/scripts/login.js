@@ -1,28 +1,10 @@
 $(document).ready(() => {
-<<<<<<< HEAD
-    var email = $("#email");
-    var password = $("#password");
-    $.ajax({
-        url: "../../views/admin_tools/loginProcess.php",
-        type: "POST",
-        data: {
-            "email": email.val(),
-            "password": MD5(password.val())
-        },
-        success: function(response) {
-            console.log(response);
-        },
-        fail: function() {
-            alert("failed to register user");
-        }
-    });
-=======
     $("button[type='submit']").click((e) => {
         e.preventDefault();
         var email = $("#email");
         var password = $("#password");
         $.ajax({
-            url: "url",
+            url: "../../views/admin_tools/loginProcess.php",
             type: "POST",
             data: {
                 "email": email.val(),
@@ -41,7 +23,6 @@ $(document).ready(() => {
         });
     })
 
->>>>>>> c92ff9fbccbe07b30b7cea837f0f48f9565a1897
 
     function MD5(password) {
         var MD5 = function(d) { result = M(V(Y(X(d), 8 * d.length))); return result.toLowerCase() };
