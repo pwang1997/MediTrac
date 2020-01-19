@@ -64,14 +64,12 @@
                     //ISSUE: not updating event calendar
                     $("#btnSave").click((e) => {
                         console.log($("#newSymptom").val())
-                        if (symptom) {
                             calendar.addEvent({
                                 title: symptom,
                                 start: arg.start,
                                 end: arg.end,
                                 allDay: arg.allDay
                             });
-                        }
                         modal.modal('toggle');
                     });
 
