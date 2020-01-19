@@ -1,12 +1,13 @@
 <?php 
     require './db_queries.php';
     $title = $_POST['title'];
-    //echo $start = date("YYYY-MM-DD", strtotime($_POST['start']));
-    echo $start = strtotime(formatDate($_POST['start'], {
-        month: 'numeric',
-        year: 'numeric',
-        day: 'numeric'
-    }));
+    echo $start = $_POST['start'];
+    // echo $start = strtotime(formatDate($_POST['start'], {
+    //     month: 'numeric',
+    //     year: 'numeric',
+    //     day: 'numeric'
+    // }));
+
     $end = $_POST['end'];
 
     if(!isset($_SESSION)) { session_start();}
