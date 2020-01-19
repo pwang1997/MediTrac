@@ -11,15 +11,15 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage();
     die();
     }
-$sql = "SELECT userName FROM user";
-$stmt = $conn->prepare($sql);
-    $stmt->execute();
 
-    // set the resulting array to associative
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    echo getUserFromLogin('jane@doe.ca','passy')['id'];
 
-    while($result = $stmt->fetch()){
-        echo $result['userName'];
+    function getUserFromLogin($email, $password){
+        $sql = "SELECT * FROM user WHERE \"email\" = $email AND \"password\" = $password";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        return $stmt->fetch(); // assumed to be a single return value
     }
 
     
