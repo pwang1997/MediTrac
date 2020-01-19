@@ -7,8 +7,8 @@
     $password = $_POST['password'];
 
    $result = (getUserFromLogin(connect(), $email,($password)));
-
+    echo $result;
    $_SESSION['user'] = $result['id'];
-    echo "<script>console.log(".$_SESSION['user'].")</script>";
-   header("Location:"."../../../index.php");
+    echo $_SESSION['user'];
+   //header("Location:"."../../../index.php");
 ?>
