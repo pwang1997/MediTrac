@@ -1,6 +1,6 @@
 <?php
 
-
+mysqli_report(MYSQLI_REPORT_ALL);
 $mysqli = new mysqli("34.94.246.220", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
 /*$sql = "SELECT userName FROM user";
 if (!$result = $mysqli->query($sql)) {
