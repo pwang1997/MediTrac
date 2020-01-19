@@ -6,6 +6,100 @@ if(!isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html>
 <?php include './MediTrac/views/shared/head.php'; ?>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var Calendar = FullCalendar.Calendar;
+            var Draggable = FullCalendarInteraction.Draggable
+
+            var draggableEl = document.getElementById('draggable-el');
+            var calendarEl = document.getElementById('calendar');
+
+            new Draggable(draggableEl, {
+                itemSelector: '.fc-event',
+                eventData: function(eventEl) {
+                    return {
+                        title: eventEl.innerText.trim()
+                    }
+                }
+            });
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['dayGrid', 'interaction', 'timeGrid'],
+                header: {
+                    left: 'today',
+                    center: 'title',
+                    right: 'prev,next'
+                },
+                navLinks: true, // can click day/week names to navigate views
+                //selectable: true,
+                selectMirror: true,
+                // select: function(arg) {
+                //     var modal = $('.modal');
+                //     modal.modal('show');
+                //     symptom = "";
+                //     isAdded = false;
+
+                //     //ISSUE: not updating event calendar
+                //     $("#btnSave").click((e) => {
+                //         symptom = $("#symptomList").select().val()
+                //         if (symptom === "Add New Symptom" && $('#newsymptom').val()) {
+                //             symptom = $('#newsymptom').val();
+                //         }
+                //         console.log(symptom)
+                //         if (symptom) {
+                //             calendar.addEvent({
+                //                 title: symptom,
+                //                 start: arg.start,
+                //                 end: arg.end,
+                //                 allDay: arg.allDay
+                //             });
+                //         }
+                //         calendar.unselect();
+                //         modal.modal('hide');
+                //         $('#newSymptomDiv').remove();
+                //         $("#firstOption").attr('selected', '');
+                //     });
+
+                // var title = prompt('Event Title:');
+                // if (title) {
+                //     calendar.addEvent({
+                //         title: title,
+                //         start: arg.start,
+                //         end: arg.end,
+                //         allDay: arg.allDay
+                //     })
+                // }
+                // },
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                <?php
+                include './MediTrac/views/admin_tools/db_queries.php';
+                
+                $user = $_SESSION['user'];
+                $con = connect();
+                $symptoms = getSymptomsFromUser($con,$user);
+                $year = date("Y");
+                $month = date("m");
+                $output = "";
+                foreach($symptoms as $symptom){
+                    $events = getSymptomEventsForMonth($con,$symptom['id'],$month,$year);
+                    foreach($events as $event){
+                        $output .= "{title: '".$symptom['name']."',
+                            start: '".$event['date']."',
+                            color: '".$symptom['colour'].
+                            "'},";
+                    }
+                }
+                $con = null;
+                echo substr($output,0,-1);
+                ?>
+                ]
+            });
+
+            calendar.render();
+        });
+    </script>
 
 <body>
     <?php include './MediTrac/views/shared/header.html'; ?>
