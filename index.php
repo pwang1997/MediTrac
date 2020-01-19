@@ -7,8 +7,8 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-4 container p-2 border mx-auto">
-                    <input type="text" placeholder="Add new..">
+                <div class="col-4 container p-2 border">
+                    <input type="text" placeholder="Add new.." class="p-1 m-1">
                     <div id='external-events'>
                         <h4>Draggable Events</h4>
                         <div id='draggable-el' class='t-2 m-2'>
