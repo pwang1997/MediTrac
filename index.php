@@ -155,12 +155,13 @@ if (!isset($_SESSION['user'])) {
 
         $(":submit").click((e) => {
             e.preventDefault();
+            var symptom = $("#inputSymptom");
             $.ajax({
                 url: "MediTrac/views/admin_tools/addSymptom.php",
                 type: "POST",
                 dataType: "json",
                 data: {
-                    name: $("#inputSymptom").val()
+                    name: symptom.val()
                 },
                 success: function(response) {
                     console.log(response)
@@ -170,7 +171,7 @@ if (!isset($_SESSION['user'])) {
                 }
             });
 
-            $("#draggable-el").children().append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">TEST</div>');
+            $("#draggable-el").children().append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">'+symptom.val()+'</div>');
 
         })
 
