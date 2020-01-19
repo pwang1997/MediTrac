@@ -12,8 +12,8 @@
                     <div id='external-events'>
                         <h4 class="text-center" style="color: #08d6b0">Draggable Events</h4>
                         <div id='draggable-el' class='t-2 m-2'>
-                            <div class="fc-event fc-draggable p-1 m-1">My Event 1</div>
-                            <div class='fc-event fc-draggable p-1 m-1'>My Event 2</div>
+                            <div class="fc-event fc-draggable p-1 m-1" style="background-color: #08d6b0">My Event 1</div>
+                            <div class='fc-event fc-draggable p-1 m-1' style="background-color: #08d6b0">My Event 2</div>
                         </div>
 
                     </div>
