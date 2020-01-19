@@ -35,24 +35,23 @@
               center: 'title',
               right: 'dayGridMonth,timeGridWeek,timeGridDay'
             },
-            defaultDate: '2019-08-12',
-      navLinks: true, // can click day/week names to navigate views
+      //navLinks: true, // can click day/week names to navigate views
       selectable: true,
+      selectHelper: true,
       selectMirror: true,
-      select: function(arg) {
-        var title = prompt('Event Title:');
-        if (title) {
-          calendar.addEvent({
-            title: title,
-            start: arg.start,
-            end: arg.end,
-            allDay: arg.allDay
-          })
-        }
-        calendar.unselect()
-      },
       editable: true,
-      eventLimit: true, // allow "more" link when too many events
+      eventLimit: true,
+      select: function(start, end) {
+        $.getScript('/events/new', function(){
+          $('#event_date_range').val(moment(start).format("DD/MM/YYYY HH:mm") + ' - ' + moment(end).format("DD/MM/YYYY HH:mm")).date_range_picker();
+          $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
+          $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
+        });
+        calendar.unselect()
+        
+        },
+
+      
       events: [
         {
           title: 'All Day Event',
