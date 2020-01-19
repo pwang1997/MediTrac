@@ -1,7 +1,6 @@
 <?php
 
-include_once 'db_connector.php';
-
+try{
 $mysqli = new mysqli("34.94.246.220", "root", "qwerty1", "peaceful-berm-265521:us-west2:meditrac");
 $sql = "SELECT userName FROM user";
 if (!$result = $mysqli->query($sql)) {
@@ -19,6 +18,9 @@ if (!$result = $mysqli->query($sql)) {
 $result->fetch_assoc();
 
 echo($result['email']);
+}catch(Exception $e){
+    echo $e
+}
 
 
 ?>
