@@ -111,9 +111,9 @@ if (!isset($_SESSION['user'])) {
             <div class="row">
                 <div class="col-4 container p-2 border bg-dark text-light">
                     <form id="addSymptom">
-                        <div class="d-inline">
-                            <input id="inputSymptom" type="text" placeholder="Add new" class="d-inline" />
-                            <button type="submit" form="addSymptom" value="Submit" class="d-inline btn btn-light">add</button>
+                    <div class="d-inline" style="width:300px; display:table">
+                            <input id="inputSymptom" type="text" placeholder="Add new" class="d-inline" style="display:table-cell; width:80%">
+                            <button type="submit" form="addSymptom" value="Submit" class="d-inline btn btn-light" style="display:table-cell; width:18%">add</button>
                         </div>
                     </form>
                     <div id='external-events'>
@@ -155,12 +155,13 @@ if (!isset($_SESSION['user'])) {
 
         $(":submit").click((e) => {
             e.preventDefault();
+            var symptom = $("#inputSymptom");
             $.ajax({
                 url: "MediTrac/views/admin_tools/addSymptom.php",
                 type: "POST",
                 dataType: "json",
                 data: {
-                    name: $("#inputSymptom").val()
+                    name: symptom.val()
                 },
                 success: function(response) {
                     console.log(response)
@@ -170,7 +171,7 @@ if (!isset($_SESSION['user'])) {
                 }
             });
 
-            $("#draggable-el").children().append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">TEST</div>');
+            $("#draggable-el").append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">'+symptom.val()+'</div>');
 
         })
 
