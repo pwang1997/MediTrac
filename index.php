@@ -171,7 +171,7 @@ if (!isset($_SESSION['user'])) {
                 }
             });
 
-            $("#draggable-el").children().append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">'+symptom.val()+'</div>');
+            $("#draggable-el").append('<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: black "; border: solid 1px black\">'+symptom.val()+'</div>');
 
         })
 
