@@ -91,7 +91,7 @@ if(!isset($_SESSION['user'])){
         <div class="container">
             <div class="row">
                 <div class="col-4 container p-2 border bg-dark text-light">
-                    <input type="text" placeholder="Add new" class="w-100 p-2 m-2">
+                    <input type="text" placeholder="Add new" class="w-100 p-2 mr-2 mt-2 mb-2">
                     <div id='external-events'>
                         <h4 class="text-center" style="color: #08d6b0">Symptoms</h4>
                         <div id='draggable-el' class='t-2 m-2'>
@@ -100,7 +100,7 @@ if(!isset($_SESSION['user'])){
                             $con = connect();
                             $symptoms = getSymptomsFromUser($con,$user);
                             foreach($symptoms as $symptom){
-                                echo "<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: ".$symptom['colour']."; border: solid 1px blackg\">".$symptom['name']."</div>";
+                                echo "<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: ".$symptom['colour']."; border: solid 1px black\">".$symptom['name']."</div>";
                             }
                             $con = null;
                         ?>
