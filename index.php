@@ -37,14 +37,13 @@ if(!isset($_SESSION['user'])){
                 droppable: true,
                 eventReceive: function(info){
                     $.ajax({
-                        url:"url",
+                        url:"MediTrac/views/admin_tools/addSymptomEvent.php",
                         type:"POST",
                         dataType:"json",
                         data: {
                             title: info.event.title,
                             start: info.event.start,
                             end: info.event.end,
-                            url: "/loginProgress.php"
                         },
                         success:function(response) {
                             console.log(response)
@@ -91,7 +90,12 @@ if(!isset($_SESSION['user'])){
         <div class="container">
             <div class="row">
                 <div class="col-4 container p-2 border bg-dark text-light">
-                    <input type="text" placeholder="Add new" class="w-100 p-1 m-1">
+                    <form action="" method="POST" id="addSymptom">
+                        <div class="d-inline">
+                        <input type="text" placeholder="Add new" class="d-inline"/>
+                        <button type="submit" form="addSymptom" value="Submit" class="d-inline">add</button>
+                        </div>
+                    </form>
                     <div id='external-events'>
                         <h4 class="text-center" style="color: #08d6b0">Symptoms</h4>
                         <div id='draggable-el' class='t-2 m-2'>
