@@ -95,8 +95,15 @@ if(!isset($_SESSION['user'])){
                     <div id='external-events'>
                         <h4 class="text-center" style="color: #08d6b0">Symptoms</h4>
                         <div id='draggable-el' class='t-2 m-2'>
-                            <div class="fc-event fc-draggable p-1 m-1" style="background-color: #08d6b0; border: solid 1px #08d6b0">My Event 1</div>
-                            <div class='fc-event fc-draggable p-1 m-1' style="background-color: #08d6b0; border: solid 1px #08d6b0">My Event 2</div>
+                        <?php
+                            $user = $_SESSION['user'];
+                            $con = connect();
+                            $symptoms = getSymptomsFromUser($con,$user);
+                            foreach($symptoms as $symptom){
+                                echo "<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: ".$symptom['colour']."; border: solid 1px #08d6b0\">".$symptom['name']."</div>";
+                            }
+                            $con = null;
+                        ?>
                         </div>
 
                     </div>
