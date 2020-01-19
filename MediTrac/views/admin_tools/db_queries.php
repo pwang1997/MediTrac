@@ -32,15 +32,15 @@
 
     //INSERT
     function insertUser($con,$userName,$email,$password){
-        $sql = "INSERT INTO user(userName,email,password) VALUES(\'$userName\',\'$email\',\'".md5($password)."\'";
+        $sql = "INSERT INTO user(userName,email,password) VALUES('$userName','$email','".md5($password)."'";
         $con->exec($sql);
     }
     function insertSymptom($con,$userId,$name,$colour){
-        $sql = "INSERT INTO symptom(userId,name,colour) VALUES(\'$userId\',\'$name\',\'$colour\'";
+        $sql = "INSERT INTO symptom(userId,name,colour) VALUES('$userId','$name','$colour'";
         $con->exec($sql);
     }
     function insertSymptomEvent($con,$symptomId,$date){
-        $sql = "INSERT INTO symptomEvent(symptomId,date) VALUES(\'$symptomId\',\'$date\')";
+        $sql = "INSERT INTO symptomEvent(symptomId,date) VALUES('$symptomId','$date')";
         $con->exec($sql);
     }
 
