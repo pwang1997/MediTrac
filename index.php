@@ -34,46 +34,9 @@ if(!isset($_SESSION['user'])){
                 navLinks: true, // can click day/week names to navigate views
                 //selectable: true,
                 selectMirror: true,
-                drop: function(date, this){
+                dropEvent: function(date, this){
                     alert(date.format());
-                }
-                // select: function(arg) {
-                //     var modal = $('.modal');
-                //     modal.modal('show');
-                //     symptom = "";
-                //     isAdded = false;
-
-                //     //ISSUE: not updating event calendar
-                //     $("#btnSave").click((e) => {
-                //         symptom = $("#symptomList").select().val()
-                //         if (symptom === "Add New Symptom" && $('#newsymptom').val()) {
-                //             symptom = $('#newsymptom').val();
-                //         }
-                //         console.log(symptom)
-                //         if (symptom) {
-                //             calendar.addEvent({
-                //                 title: symptom,
-                //                 start: arg.start,
-                //                 end: arg.end,
-                //                 allDay: arg.allDay
-                //             });
-                //         }
-                //         calendar.unselect();
-                //         modal.modal('hide');
-                //         $('#newSymptomDiv').remove();
-                //         $("#firstOption").attr('selected', '');
-                //     });
-
-                // var title = prompt('Event Title:');
-                // if (title) {
-                //     calendar.addEvent({
-                //         title: title,
-                //         start: arg.start,
-                //         end: arg.end,
-                //         allDay: arg.allDay
-                //     })
-                // }
-                // },
+                },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
                 events: [
