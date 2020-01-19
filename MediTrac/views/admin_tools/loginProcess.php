@@ -7,8 +7,7 @@
     $password = $_POST['password'];
 
    $result = (getUserFromLogin(connect(), $email,($password)));
-    echo $result;
    $_SESSION['user'] = $result['id'];
-    echo $_SESSION['user'];
+    echo isset($_SESSION['user']) ? $_SESSION['user'] : "SESSION USER NOT SET";
    //header("Location:"."../../../index.php");
 ?>
