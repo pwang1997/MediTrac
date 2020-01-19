@@ -30,7 +30,7 @@ catch(PDOException $e)
     function getSymptomEventsForMonth($con,$symptomId,$month,$year){
         $endMonth = ($month == 12 ? 1 : $month+1);
         $endYear = ($month == 12 ? $year+1 : $year);
-        $sql = "SELECT * FROM symptomEvent WHERE symptomId = $symptomId AND date >= '$year-$month-0 00:00:00' AND date < '$endYear-$endMonth-0 00:00:00'";
+        $sql = "SELECT * FROM symptomEvent WHERE symptomId = $symptomId AND date >= '$year-$month-1 00:00:00' AND date < '$endYear-$endMonth-1 00:00:00'";
         return executeSql($con,$sql)->fetchAll();
     }
 
