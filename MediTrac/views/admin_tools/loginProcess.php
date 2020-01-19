@@ -10,4 +10,4 @@
 
    $_SESSION['user'] = $result['id'];
 
-   header("Location:"."/html/index.php");
+   header("Location:".".");
