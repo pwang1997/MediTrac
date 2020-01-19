@@ -156,7 +156,7 @@ if (!isset($_SESSION['user'])) {
         $(":submit").click((e) => {
             e.preventDefault();
             var symptom = $("#inputSymptom");
-            if (!symptom.isEmpty()){
+            if (symptom.val() !== ""){
                 $.ajax({
                     url: "MediTrac/views/admin_tools/addSymptom.php",
                     type: "POST",

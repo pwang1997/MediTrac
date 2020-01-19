@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="btn btn-black" id="loginSubmit">Login</button>
+                    <button type="submit" class="btn btn-dark" id="loginSubmit">Login</button>
                 </div>
         </div>
         </form>
