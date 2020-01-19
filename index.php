@@ -8,6 +8,11 @@ if(!isset($_SESSION['user'])){
 <html>
 <?php include './MediTrac/views/shared/head.php'; ?>
 <script>
+    function convertDate(d){
+        var parts = d.split(" ");
+        var months = {Jan: "01",Feb: "02",Mar: "03",Apr: "04",May: "05",Jun: "06",Jul: "07",Aug: "08",Sep: "09",Oct: "10",Nov: "11",Dec: "12"};
+        return parts[3]+"-"+months[parts[1]]+"-"+parts[2];
+    }
         document.addEventListener('DOMContentLoaded', function() {
             var Calendar = FullCalendar.Calendar;
             var Draggable = FullCalendarInteraction.Draggable
@@ -42,7 +47,7 @@ if(!isset($_SESSION['user'])){
                         dataType:"json",
                         data: {
                             title: info.event.title,
-                            start: formatDate("YYYY-MM-DD", info.event.start),
+                            start: convertDate(info.event.start),
                             end: info.event.end,
                         },
                         success:function(response) {
