@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include '../shared/head.html'; ?>
+<?php include '../shared/head.php'; ?>
 <script src="../../static/scripts/login.js"></script>
 <body>
     <?php include '../shared/header.html'; ?>

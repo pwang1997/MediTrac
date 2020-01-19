@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include './MediTrac/views/shared/head.html'; ?>
+<?php include './MediTrac/views/shared/head.php'; ?>
 
 <body>
     <?php include './MediTrac/views/shared/header.html'; ?>
