@@ -1,3 +1,7 @@
 main{
     padding: 2em;
 }
+span.fc-title{
+    background-color: #08d6b0;
+    color: white;
+}
