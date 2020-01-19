@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION['user'])){
+                    header("Location:"."./MediTrac/views/login/login.php");
+                }
+                ?>
+
 <head>
     <!--Bootstrap-->
     <!-- Latest compiled and minified CSS -->
@@ -91,9 +97,7 @@
                 events: [
                 <?php
                 include './MediTrac/views/admin_tools/db_queries.php';
-                if(!isset($_SESSION['user'])){
-                    header("Location:"."./MediTrac/views/login/login.php");
-                }
+                
                 $user = $_SESSION['user'];
                 $con = connect();
                 $symptoms = getSymptomsFromUser($con,$user);
