@@ -145,6 +145,8 @@ if (!isset($_SESSION['user'])) {
 
 <script>
     $(document).ready(() => {
+        var colours = ["#08d6b0","#a909b8","#156b07","#db0d66","#0d05a1","#0c0c0d","#a11010"];
+
         $("#symptomList").change(function() {
             var selectedsymptom = $(this).children("option:selected").val();
             if (selectedsymptom === "Add New Symptom") {
@@ -162,7 +164,8 @@ if (!isset($_SESSION['user'])) {
                     type: "POST",
                     dataType: "json",
                     data: {
-                        name: symptom.val()
+                        name: symptom.val(),
+                        colour: colours[Math.floor(Math.random()*colours.length)]
                     },
                     success: function(response) {
                         console.log(response)
