@@ -15,9 +15,8 @@
                 </li>
             </ul>
             <?php
-                if(isset($_SESSION) && isset($_SESSION['user'])){
-                    include_once '../admin_tools/db_queries';
-                    echo "<p>Welcome ".executeSql(connect(),"SELECT userName FROM user WHERE id = ".$_SESSION['user'])->fetch()['username']."!</p>";
+                if(isset($_SESSION) && isset($_SESSION['username'])){
+                    echo "<p>Welcome ".$_SESSION['username']."!</p>";
                 }
             ?>
             <form class="form-inline my-2 my-lg-0">

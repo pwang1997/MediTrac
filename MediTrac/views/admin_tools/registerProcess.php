@@ -11,6 +11,7 @@
    insertUser($con, $username,$email,$password);
    $result = getUserFromLogin($con,$email,$password);
    $_SESSION['user'] = $result['id'];
+   $_SESSION['username'] = $username;
    $con = null;
    header("Location:"."../../../index.php");
 ?>
