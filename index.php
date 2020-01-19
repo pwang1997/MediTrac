@@ -8,6 +8,7 @@
                     <div class="row">
                         <div class="col-4">
                             <input type="text" placeholder="Search..">
+                            <div id='draggable-el' data-event='{ "title": "my event", "duration": "02:00" }'>drag me!! Test!</div>
                         </div>
                         <div class="col-8">
                             <div id='calendar'></div>
