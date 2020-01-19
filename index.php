@@ -113,7 +113,7 @@ if (!isset($_SESSION['user'])) {
                     <form id="addSymptom">
                         <div class="d-inline">
                             <input id="inputSymptom" type="text" placeholder="Add new" class="d-inline" />
-                            <button type="submit" form="addSymptom" value="Submit" class="d-inline btn btn-dark">add</button>
+                            <button type="submit" form="addSymptom" value="Submit" class="d-inline btn btn-light">add</button>
                         </div>
                     </form>
                     <div id='external-events'>
