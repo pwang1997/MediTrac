@@ -16,7 +16,7 @@
 
     //SELECT
     function getUserFromLogin($con, $email, $password){
-        $sql = "SELECT * FROM user WHERE email = '$email' AND password = \'".md5($password)."\'";
+        $sql = "SELECT * FROM user WHERE email = \'$email\' AND password = \'".md5($password)."'";
         return executeSql($con,$sql)->fetch();
     }
     function getSymptomsFromUser($con,$userId){
