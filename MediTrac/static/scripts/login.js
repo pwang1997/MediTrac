@@ -1,20 +1,28 @@
 $(document).ready(() => {
-    var email = $("#email");
-    var password = $("#password");
-    $.ajax({
-        url: "url",
-        type: "POST",
-        data: {
-            "email": email.val(),
-            "password": MD5(password.val())
-        },
-        success: function(response) {
-            console.log(response);
-        },
-        fail: function() {
-            alert("failed to register user");
-        }
-    });
+    $("button[type='submit']").click((e) => {
+        e.preventDefault();
+        var email = $("#email");
+        var password = $("#password");
+        $.ajax({
+            url: "url",
+            type: "POST",
+            data: {
+                "email": email.val(),
+                "password": MD5(password.val())
+            },
+            success: function(response) {
+                if (response.success) {
+                    console.log(response);
+                } else {
+                    alert("log in failed")
+                }
+            },
+            fail: function() {
+                alert("failed to register user");
+            }
+        });
+    })
+
 
     function MD5(password) {
         var MD5 = function(d) { result = M(V(Y(X(d), 8 * d.length))); return result.toLowerCase() };

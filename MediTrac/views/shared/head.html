@@ -76,19 +76,27 @@
                 //         $("#firstOption").attr('selected', '');
                 //     });
 
-                    // var title = prompt('Event Title:');
-                    // if (title) {
-                    //     calendar.addEvent({
-                    //         title: title,
-                    //         start: arg.start,
-                    //         end: arg.end,
-                    //         allDay: arg.allDay
-                    //     })
-                    // }
-               // },
+                // var title = prompt('Event Title:');
+                // if (title) {
+                //     calendar.addEvent({
+                //         title: title,
+                //         start: arg.start,
+                //         end: arg.end,
+                //         allDay: arg.allDay
+                //     })
+                // }
+                // },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
-                events: []
+                events: [{
+                    title: 'event1',
+                    start: '2020-01-19',
+                    color: 'yellow'
+                }, {
+                    title: 'event1',
+                    start: '2020-01-19',
+                    color: 'red'
+                }]
             });
 
             calendar.render();
