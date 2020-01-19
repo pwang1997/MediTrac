@@ -16,9 +16,9 @@ $stmt = $conn->prepare($sql);
     $stmt->execute();
 
     // set the resulting array to associative
-    $results = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-    while($result = $results->fetch()){
+    while($result = $stmt->fetch()){
         echo $result['userName'];
     }
 
