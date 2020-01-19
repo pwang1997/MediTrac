@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION['user'])){
+                    header("Location:"."./MediTrac/views/login/login.php");
+                }
+                ?>
 <!DOCTYPE html>
 <html>
 <?php include './MediTrac/views/shared/head.php'; ?>
