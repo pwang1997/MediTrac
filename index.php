@@ -12,8 +12,8 @@
                     <div id='external-events'>
                         <h4>Draggable Events</h4>
                         <div id='draggable-el mt-2'>
-                            <div class="fc-event fc-draggable">My Event 1</div>
-                            <div class='fc-event fc-draggable'>My Event 2</div>
+                            <div class="event fc-event fc-draggable">My Event 1</div>
+                            <div class='event fc-event fc-draggable'>My Event 2</div>
                         </div>
 
                     </div>
