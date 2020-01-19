@@ -91,9 +91,8 @@
                 events: [
                 <?php
                 include './MediTrac/views/admin_tools/db_queries.php';
-                $_SESSION['userId'] = 1;
                 if(!isset($_SESSION['userId'])){
-                    redirect("./MediTrac/views/login/login.php");
+                    header("Location:"."./MediTrac/views/login/login.php");
                 }
                 $user = $_SESSION['userId'];
                 $con = connect();
