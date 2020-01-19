@@ -84,7 +84,7 @@ if(!isset($_SESSION['user'])){
                             $con = connect();
                             $symptoms = getSymptomsFromUser($con,$user);
                             foreach($symptoms as $symptom){
-                                echo "<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: ".$symptom['colour']."; border: solid 1px #08d6b0\">".$symptom['name']."</div>";
+                                echo "<div class=\"fc-event fc-draggable p-1 m-1\" style=\"background-color: ".$symptom['colour']."; border: solid 1px black\">".$symptom['name']."</div>";
                             }
                             $con = null;
                         ?>
