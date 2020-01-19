@@ -20,7 +20,7 @@
         </div>
         <?php
                 if(isset($_SESSION) && isset($_SESSION['username'])){
-                    echo "<p class=\"float-right text-light\">Welcome ".$_SESSION['username']."!</p>";
+                    echo "<p class=\"float-right text-light\" style=\"position:relative;top:15px\">Welcome ".$_SESSION['username']."!</p>";
                 }
             ?>
     </nav>
