@@ -82,11 +82,9 @@ if (!isset($_SESSION['user'])) {
                 $user = $_SESSION['user'];
                 $con = connect();
                 $symptoms = getSymptomsFromUser($con, $user);
-                $year = date("Y");
-                $month = date("m");
                 $output = "";
                 foreach ($symptoms as $symptom) {
-                    $events = getSymptomEventsForMonth($con, $symptom['id'], $month, $year);
+                    $events = getSymptomEvents($con, $symptom['id']);
                     foreach ($events as $event) {
                         $output .= "{title: '" . $symptom['name'] . "',
                             start: '" . $event['date'] . "',
