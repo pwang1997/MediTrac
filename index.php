@@ -92,8 +92,8 @@ if(!isset($_SESSION['user'])){
                 <div class="col-4 container p-2 border bg-dark text-light">
                     <form action="" method="POST" id="addSymptom">
                         <div class="d-inline">
-                        <input type="text" placeholder="Add new"/>
-                        <button type="submit" form="addSymptom" value="Submit">add</button>
+                        <input type="text" placeholder="Add new" class="d-inline"/>
+                        <button type="submit" form="addSymptom" value="Submit" class="d-inline">add</button>
                         </div>
                     </form>
                     <div id='external-events'>
