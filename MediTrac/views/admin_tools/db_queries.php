@@ -32,7 +32,7 @@
 
     //INSERT
     function insertUser($con,$userName,$email,$password){
-        $sql = "INSERT INTO user(userName,email,password) VALUES('$userName','$email','".md5($password)."'";
+        $sql = "INSERT INTO user(userName,email,password) VALUES('$userName','$email','".md5($password)."')";
         $con->exec($sql);
     }
     function insertSymptom($con,$userId,$name,$colour){
