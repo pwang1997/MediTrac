@@ -9,7 +9,7 @@
         <div class="mx-auto" style="width: 600px;">
             <form id="registerForm" method="POST"action="../admin_tools/loginProcess.php">
                 <h4 class="mx-auto">Login</h4>
-
+                <?php echo isset($_SESSION['user']) ? $_SESSION['user'] : "USER NOT LOGGED IN" ?>
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
