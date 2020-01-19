@@ -36,7 +36,23 @@ if(!isset($_SESSION['user'])){
                 selectMirror: true,
                 droppable: true,
                 eventReceive: function(info){
-                    alert("test");
+                    $.ajax({
+                        url:"url",
+                        type:"POST",
+                        dataType:"json",
+                        data: {
+                            title: info.event.title,
+                            start: info.event.start,
+                            end: info.event.end,
+                            url: "/loginProgress.php"
+                        },
+                        success:function(response) {
+                            console.log(response)
+                        },
+                        fail:function() {
+
+                        }
+                    });
                 },
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
@@ -77,7 +93,7 @@ if(!isset($_SESSION['user'])){
                 <div class="col-4 container p-2 border bg-dark text-light">
                     <input type="text" placeholder="Add new" class="w-100 p-1 m-1">
                     <div id='external-events'>
-                        <h4 class="text-center" style="color: #08d6b0">Draggable Events</h4>
+                        <h4 class="text-center" style="color: #08d6b0">Symptoms</h4>
                         <div id='draggable-el' class='t-2 m-2'>
                         <?php
                             $user = $_SESSION['user'];
