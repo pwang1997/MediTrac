@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php include '../shared/head.html'; ?>
-    <script src="register.js"></script>
+    <script src="../../static/scripts/register.js"></script>
     
     <body>
         <?php include '../shared/header.html'; ?>
