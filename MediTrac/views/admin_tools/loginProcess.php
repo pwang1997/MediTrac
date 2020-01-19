@@ -8,5 +8,6 @@
 
    $result = (getUserFromLogin(connect(), $email,($password)));
    $_SESSION['user'] = $result['id'];
+   $_SESSION['username'] = $result['userName'];
    header("Location:"."../../../index.php");
 ?>

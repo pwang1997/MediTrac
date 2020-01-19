@@ -23,10 +23,8 @@
         $sql = "SELECT * FROM symptom WHERE userId = $userId";
         return executeSql($con,$sql)->fetchAll();
     }
-    function getSymptomEventsForMonth($con,$symptomId,$month,$year){
-        $endMonth = ($month == 12 ? 1 : $month+1);
-        $endYear = ($month == 12 ? $year+1 : $year);
-        $sql = "SELECT * FROM symptomEvent WHERE symptomId = $symptomId AND date >= '$year-$month-1 00:00:00' AND date < '$endYear-$endMonth-1 00:00:00'";
+    function getSymptomEvents($con,$symptomId){
+        $sql = "SELECT * FROM symptomEvent WHERE symptomId = $symptomId";
         return executeSql($con,$sql)->fetchAll();
     }
 
