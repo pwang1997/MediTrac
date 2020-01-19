@@ -13,13 +13,15 @@
                     <a class="nav-link" href="/MediTrac/views/register/register.php">Register</a>
                 </li>
             </ul>
-            <?php
-                if(isset($_SESSION) && isset($_SESSION['username'])){
-                    echo "<p class=\"align-bottom text-light\" style=\"left:10px\">Welcome ".$_SESSION['username']."!</p>";
-                }
-            ?>
+            
             <form class="form-inline my-2 my-lg-0">
             </form>
+            
         </div>
+        <?php
+                if(isset($_SESSION) && isset($_SESSION['username'])){
+                    echo "<p class=\"float-right text-light\">Welcome ".$_SESSION['username']."!</p>";
+                }
+            ?>
     </nav>
 </header>
